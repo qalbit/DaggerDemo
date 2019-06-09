@@ -26,7 +26,7 @@ public abstract class Repo {
     public abstract long forksCount();
 
     @Json(name = "contributors_url")
-    public abstract long contributorsUrl();
+    public abstract String contributorsUrl();
 
     @Json(name = "created_at")
     public abstract ZonedDateTime createdDate();
