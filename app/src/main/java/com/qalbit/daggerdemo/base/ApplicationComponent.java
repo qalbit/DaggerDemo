@@ -6,7 +6,6 @@ import com.qalbit.daggerdemo.networking.ServiceModule;
 import javax.inject.Singleton;
 
 import dagger.Component;
-import dagger.Provides;
 
 @Singleton
 @Component(modules = {

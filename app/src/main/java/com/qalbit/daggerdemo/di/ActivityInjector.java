@@ -14,7 +14,7 @@ import javax.inject.Provider;
 
 import dagger.android.AndroidInjector;
 
-public class ActivityInjector {
+public class  ActivityInjector {
 
     private final Map<Class<? extends Activity>, Provider<AndroidInjector.Factory<? extends Activity>>> activityInjectors;
     private final Map<String, AndroidInjector<? extends Activity>> cache = new HashMap<>();

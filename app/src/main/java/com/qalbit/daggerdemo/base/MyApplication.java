@@ -7,7 +7,6 @@ import com.qalbit.daggerdemo.di.ActivityInjector;
 
 import javax.inject.Inject;
 
-import dagger.Provides;
 import timber.log.Timber;
 
 public class MyApplication extends Application {
@@ -15,21 +14,25 @@ public class MyApplication extends Application {
     @Inject
     ActivityInjector activityInjector;
 
-    private ApplicationComponent component;
+    protected ApplicationComponent component;
 
     @Override
     public void onCreate() {
         super.onCreate();
         // DaggerApplicationComponent will generate once you build the project
-        component = DaggerApplicationComponent.builder()
-                .applicationModule(new ApplicationModule(this))
-                .build();
+        component = initComponent();
 
         component.inject(this);
 
         if (BuildConfig.DEBUG) {
             Timber.plant(new Timber.DebugTree());
         }
+    }
+
+    protected ApplicationComponent initComponent() {
+        return DaggerApplicationComponent.builder()
+                .applicationModule(new ApplicationModule(this))
+                .build();
     }
 
     public ActivityInjector getActivityInjector() {

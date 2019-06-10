@@ -29,6 +29,7 @@ ext {
     targetSdkVersion = 28
     supportLibraryVersion = '28.0.0'
     daggerVersion = '2.23.1'
+    daggerTestVersion = '2.11'
     retrofitVersion = '2.6.0'
     moshiVersion = '1.5.0'
     autoValueVersion = '1.5.1'
@@ -40,6 +41,7 @@ ext {
     conductorVersion = '2.1.5'
     timberVersion = '4.7.1'
     butterknifeVersion = '9.0.0'
+    mockitoVersion = '2.28.2'
 }
 
 task clean(type: Delete) {
